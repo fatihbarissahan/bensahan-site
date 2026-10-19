@@ -70,12 +70,12 @@ APPS = [
     },
     {
         "slug": "ehliyet",
-        "name": {"tr": "Online Ehliyet Dersleri", "en": "Online Ehliyet Dersleri"},
+        "name": {"tr": "Online Ehliyet Dersi", "en": "Online Ehliyet Dersi"},
         "tagline": {
             "tr": "Ehliyet sınavına hazırlık: konu anlatımı, soru bankası ve deneme sınavları.",
             "en": "Prepare for the Turkish driving-licence theory exam: lessons, question bank and mock exams.",
         },
-        "updated": {"tr": "13 Ekim 2026", "en": "13 October 2026"},
+        "updated": {"tr": "19 Ekim 2026", "en": "19 October 2026"},
         "privacy": "ehliyet_privacy",
         # (file stem, title per language, body function, languages)
         "pages": [
@@ -265,22 +265,24 @@ def ehliyet_delete(app, lang):
         return f"""
 <p><strong>{n}</strong> hesabını ve hesabına bağlı tüm verileri iki yoldan silebilirsin.</p>
 <h2>Uygulama içinden (anında)</h2>
-<div class="card"><p>1. Uygulamayı aç ve <strong>Profil</strong> sekmesine git.<br>2. <strong>Hesap</strong>'a dokun.<br>3. <strong>Hesabımı ve verilerimi sil</strong>'e dokun ve onayla.</p></div>
+<div class="card"><p>1. Uygulamayı aç ve <strong>Profil</strong> sekmesine git.<br>2. <strong>Hesap</strong>'a dokun.<br>3. <strong>Hesabımı ve verilerimi sil</strong>'e dokun ve onayla.<br>4. Güvenliğin için kimliğini bir kez daha doğrula: Google ya da Apple ile girdiysen giriş ekranı açılır, e-posta ile girdiysen şifreni girersin.</p></div>
+<p>Hesap açmadan misafir olarak kullanıyorsan aynı adımlar sunucudaki misafir kaydını ve bu cihazdaki ilerlemeni siler; ek doğrulama istenmez.</p>
 <h2>E-posta ile</h2>
 <p>Uygulamaya erişemiyorsan hesabında kayıtlı e-posta adresinden <a href="mailto:{e}?subject=Hesap%20silme%20talebi">{e}</a> adresine "Hesap silme talebi" konulu bir e-posta gönder. Talebin en geç 30 gün içinde yerine getirilir.</p>
 <h2>Neler silinir</h2>
-<p>Hesabın (e-posta adresi ve giriş bilgileri), çözdüğün alıştırma ve deneme sınavı kayıtları, ilerleme ve rozetlerin, bildirim anahtarın. Silme işlemi geri alınamaz.</p>
+<p>Hesabın (e-posta adresi ve giriş bilgileri), çözdüğün alıştırma ve deneme sınavı kayıtları, ilerleme ve rozetlerin, bildirim anahtarın ve bu cihazdaki tüm çalışma verilerin. Apple ile giriş yaptıysan Apple'ın bu uygulama için verdiği oturum anahtarları da iptal edilir. Silme işlemi geri alınamaz.</p>
 <h2>Neler bir süre daha tutulur</h2>
 <p>Kimliğinle ilişkilendirilmemiş hata kayıtları Google Firebase tarafından en fazla 90 gün saklanır ve ardından kendiliğinden silinir.</p>
 """
     return f"""
 <p>You can delete your <strong>{n}</strong> account and all data linked to it in two ways.</p>
 <h2>In the app (immediate)</h2>
-<div class="card"><p>1. Open the app and go to the <strong>Profil</strong> tab.<br>2. Tap <strong>Hesap</strong>.<br>3. Tap <strong>Hesabımı ve verilerimi sil</strong> and confirm.</p></div>
+<div class="card"><p>1. Open the app and go to the <strong>Profil</strong> tab.<br>2. Tap <strong>Hesap</strong>.<br>3. Tap <strong>Hesabımı ve verilerimi sil</strong> and confirm.<br>4. For your security, confirm who you are once more: Google and Apple accounts see their sign-in screen again, email accounts enter their password.</p></div>
+<p>If you use the app as a guest without an account, the same steps delete the guest record on our servers and your progress on this device; no extra confirmation is needed.</p>
 <h2>By email</h2>
 <p>If you cannot access the app, send an email with the subject "Account deletion request" to <a href="mailto:{e}?subject=Account%20deletion%20request">{e}</a> from the address registered on your account. Requests are completed within 30 days.</p>
 <h2>What is deleted</h2>
-<p>Your account (email address and sign-in details), your practice and mock-exam records, your progress and badges, and your push token. Deletion cannot be undone.</p>
+<p>Your account (email address and sign-in details), your practice and mock-exam records, your progress and badges, your push token and all study data on this device. If you signed in with Apple, the sign-in tokens Apple issued to this app are revoked too. Deletion cannot be undone.</p>
 <h2>What is kept for a while</h2>
 <p>Crash reports that are not linked to your identity are kept by Google Firebase for up to 90 days and then deleted automatically.</p>
 """
